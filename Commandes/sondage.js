@@ -10,7 +10,7 @@ const fs = require('fs')
 const csvDataVotants = []
 const csvDataVotes = []
 
-function readCsv(){
+function readCsvVotants(){
     fs.createReadStream('votants.csv')
         .pipe(
             parse({
@@ -21,7 +21,7 @@ function readCsv(){
             csvDataVotants.push(dataRow)   
         })
 }
-
+/*
 function readCsvVotes(){
     fs.createReadStream('out.csv')
         .pipe(
@@ -31,10 +31,8 @@ function readCsvVotes(){
         )
         .on('data', function (dataRow){
             csvDataVotes.push(dataRow)
-           /* tanguy = csvDataVotes[1]
-            matthieu = csvDataVotes[2]*/
         })
-}
+}*/
 
 const csvWriterVotants = createCsvWriter({
     path: 'votants.csv',
@@ -42,10 +40,10 @@ const csvWriterVotants = createCsvWriter({
         {id: 'id', title: 'ID Votant'},
     ]
 });
- 
+ /*
 const recordsVotants = [
     {id: idVotant},
-];
+];*/
 
 function writeToCSVVotants(){
     csvWriterVotants.fileWriter.write(idVotant + "\n")
@@ -62,24 +60,23 @@ function isInCSV(id){
         return false;
     }
 }
-
+/*
 const csvWriterVotes = createCsvWriter({
     path: './out.csv',
     header: [
         {id: 'votes', title: 'VOTES'},
     ]
-});
-
+});*/
+/*
 function writeToCSVVotes(){
     csvWriterVotes.fileWriter.write( "tanguy"+ "\n" + tanguy + "\n" + "matthieu" + "\n"+matthieu)
     .then(() => {
         console.log('...Done');    
     });
-}
+}*/
 
 
-readCsv()
-readCsvVotes()
+readCsvVotants()
 //tanguy = csvDataVotes[1]
 //matthieu = csvDataVotes[2]
 
@@ -88,7 +85,7 @@ module.exports.run = async(client, message, args) => {
     const botChannel = client.channels.cache.get('715556424712716398')
 
     idVotant = message.author.id
-    readCsv()    
+    readCsvVotants()    
     
     /*
     function writeToCSV(){
@@ -115,7 +112,6 @@ module.exports.run = async(client, message, args) => {
         }
         //idVotant = message.author.id
         tanguy = tanguy + 1;
-        writeToCSVVotes();
         writeToCSVVotants();
         message.reply("message prit en compte.");
         botChannel.send("!!sondage")
@@ -129,7 +125,6 @@ module.exports.run = async(client, message, args) => {
         }
         //idVotant = message.author.id
         matthieu = matthieu+1;
-        writeToCSVVotes();
         writeToCSVVotants();
         message.reply("message prit en compte."); 
         botChannel.send("!!sondage")
@@ -140,8 +135,6 @@ module.exports.run = async(client, message, args) => {
         message.reply(" \n Tanguy a eu " + tanguy + " votes \n Matthieu a eu " + matthieu + " votes");
         return;
     }
-
-    writeToCSVVotes();
 
     message.reply("Je n'ai pas compris ton vote. Il doit s'écrire sous la forme de '!!sondage <personne_pour_qui_voter>'")
 }
