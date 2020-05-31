@@ -132,7 +132,11 @@ module.exports.run = async(client, message, args) => {
     }
 
     if(args[0] === "result"){
-        message.reply(" \n Tanguy a eu " + tanguy + " votes \n Matthieu a eu " + matthieu + " votes");
+        if(!message.author.hasPermission('ADMINISTRATOR')){
+            message.reply("désolé tu n'es pas admin");
+            return;
+        }
+        message.reply(`\n Tanguy a eu ${tanguy} votes. \n Matthieu a eu ${matthieu} votes.`)
         return;
     }
 
