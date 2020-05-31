@@ -7,7 +7,7 @@ module.exports = async(client, message) => {
     messageLower = message.content.toLowerCase()
 
     if(messageLower  === 'mddrrr' || messageLower === 'lol' || messageLower === 'xd' || messageLower === 'mdr' || messageLower === 'mdrrr' || messageLower === 'xptdr' || messageLower === 'xptdrr'){
-        message.reply('lol :rofl:')
+        message.reply('lol :joy:')
         message.react('😂')
     }
     
