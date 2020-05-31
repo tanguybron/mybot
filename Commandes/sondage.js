@@ -132,7 +132,7 @@ module.exports.run = async(client, message, args) => {
     }
 
     if(args[0] === "result"){
-        if(!message.author.hasPermission('ADMINISTRATOR')){
+        if(!message.member.hasPermission('ADMINISTRATOR')){
             message.reply("désolé tu n'es pas admin");
             return;
         }
