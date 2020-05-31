@@ -1,0 +1,6 @@
+version: '2'
+services: 
+  bot:
+    build: .
+    container_name: discord-bottanguy
+    command: npm start
