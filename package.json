@@ -1,0 +1,32 @@
+{
+  "name": "bottanguy",
+  "version": "1.0.0",
+  "description": "bot discord",
+  "main": "index.js",
+  "engines": {
+    "node": "8.x",
+    "npm": "*"
+  },
+  "dependencies": {
+    "csv-parse": "^4.10.1",
+    "csv-parser": "^2.3.2",
+    "csv-writer": "^1.6.0",
+    "discord": "^0.8.2",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "fast-csv": "^4.3.0",
+    "moment": "^2.26.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/bottanguy.git"
+  },
+  "keywords": [],
+  "author": "tanguy",
+  "license": "ISC"
+}
