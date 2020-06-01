@@ -3,7 +3,6 @@ const Discord = require("discord.js")
 var tanguy = 0;
 var matthieu = 0;
 var idVotant = "";
-
 var votants = []
 
 const proposition1 = "tanguy"
@@ -32,8 +31,6 @@ function createEmbedResult(){
         }
     }
 }
-
-
 
 function alreadyVoted(id){
     if(votants.includes(id)){
@@ -80,7 +77,6 @@ module.exports.run = async(client, message, args) => {
         matthieu = matthieu+1;
         votants.push(idVotant)
         message.reply("message prit en compte."); 
-        //botChannel.send("!!sondage")
         return
     }
 
@@ -95,7 +91,7 @@ module.exports.run = async(client, message, args) => {
             message.reply("désolé tu n'es pas admin");
             return;
         }
-        
+
         createEmbedResult()
         message.reply(embedResult)
         return;
