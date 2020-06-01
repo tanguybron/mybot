@@ -86,21 +86,26 @@ module.exports.run = async(client, message, args) => {
         return
     }
 
-    if(vote === "result"){
+    if(vote === "result"){        
 
         if(message.guild == null){
             message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage.")
             return;
         }
+/*
+        if(!message.member.roles.cache.find(r => r.name === "role rouge")){
+            message.reply("tu n'as pas le bon role")
+            return;
+        }*/
         
-        if(!message.member.hasPermission('ADMINISTRATOR')){
-            message.reply("désolé tu n'es pas admin");
+        if( ( !message.member.hasPermission('ADMINISTRATOR') ) || (!message.member.roles.cache.find(r => r.name === "role rouge")) ){
+            message.reply("désolé tu n'as pas le bon rôle pour afficher les résultats.");
             return;
         }
 
         createEmbedResult()
         message.reply(embedResult)
-        blockedVotes = true;
+        //blockedVotes = true;
         return;
     }
 
