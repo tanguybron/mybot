@@ -4,6 +4,9 @@ var tanguy = 0;
 var matthieu = 0;
 var idVotant = "";
 
+const proposition1 = "tanguy"
+const proposition2 = "matthieu"
+
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const parse = require('csv-parse');
 const fs = require('fs')
@@ -21,18 +24,6 @@ function readCsvVotants(){
             csvDataVotants.push(dataRow)   
         })
 }
-/*
-function readCsvVotes(){
-    fs.createReadStream('out.csv')
-        .pipe(
-            parse({
-                delimiter : ','
-            })
-        )
-        .on('data', function (dataRow){
-            csvDataVotes.push(dataRow)
-        })
-}*/
 
 const csvWriterVotants = createCsvWriter({
     path: 'votants.csv',
@@ -40,10 +31,6 @@ const csvWriterVotants = createCsvWriter({
         {id: 'id', title: 'ID Votant'},
     ]
 });
- /*
-const recordsVotants = [
-    {id: idVotant},
-];*/
 
 function writeToCSVVotants(){
     csvWriterVotants.fileWriter.write(idVotant + "\n")
@@ -60,25 +47,9 @@ function isInCSV(id){
         return false;
     }
 }
-/*
-const csvWriterVotes = createCsvWriter({
-    path: './out.csv',
-    header: [
-        {id: 'votes', title: 'VOTES'},
-    ]
-});*/
-/*
-function writeToCSVVotes(){
-    csvWriterVotes.fileWriter.write( "tanguy"+ "\n" + tanguy + "\n" + "matthieu" + "\n"+matthieu)
-    .then(() => {
-        console.log('...Done');    
-    });
-}*/
 
 
 readCsvVotants()
-//tanguy = csvDataVotes[1]
-//matthieu = csvDataVotes[2]
 
 module.exports.run = async(client, message, args) => {
 
@@ -88,14 +59,6 @@ module.exports.run = async(client, message, args) => {
     readCsvVotants()  
     args[0] = args[0].toLowerCase()  
     
-    /*
-    function writeToCSV(){
-        csvWriterVotes.writeRecords(records)       // returns a promise        
-        .then(() => {
-            console.log('...Done');
-        });
-    }
-*/
     if(message.author.bot === idVotant){
         return;
     }    
@@ -106,12 +69,11 @@ module.exports.run = async(client, message, args) => {
         return;
     }
 
-    if(args[0] === "tanguy"){
+    if(args[0] === proposition1){
         if(isInCSV(idVotant)){
             message.reply("Désolé tu as déjà voté.")
             return;
         }
-        //idVotant = message.author.id
         tanguy = tanguy + 1;
         writeToCSVVotants();
         message.reply("message prit en compte.");
@@ -119,12 +81,11 @@ module.exports.run = async(client, message, args) => {
         return;
     }
 
-    if(args[0] === "matthieu"){
+    if(args[0] === proposition2){
         if(isInCSV(idVotant)){
             message.reply("Désolé tu as déjà voté.")
             return;
         }
-        //idVotant = message.author.id
         matthieu = matthieu+1;
         writeToCSVVotants();
         message.reply("message prit en compte."); 
@@ -133,7 +94,7 @@ module.exports.run = async(client, message, args) => {
     }
 
     if(args[0] === "result"){
-        
+
         if(message.guild == null){
             message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage.")
             return;
