@@ -8,27 +8,31 @@ var votants = []
 
 const proposition1 = "tanguy"
 const proposition2 = "matthieu"
+var embedResult
 
-const embedResult = {
-    embed : {
-        color : 0x1bd33b,
-        title : `Résultats du sondage :`,
-        thumbnail : {
-            url : "https://dbdzm869oupei.cloudfront.net/img/sticker/preview/487.png"
-        },
-        fields : [
-            {
-            name : proposition1,
-            value : `a obtenu ${tanguy} votes`
+function createEmbedResult(){
+    embedResult = {
+        embed : {
+            color : 0x1bd33b,
+            title : `Résultats du sondage :`,
+            thumbnail : {
+                url : "https://dbdzm869oupei.cloudfront.net/img/sticker/preview/487.png"
             },
-            {
-            name : proposition2,
-            value : `a obtenu ${matthieu} votes`,
-            },
-        ],
-        
+            fields : [
+                {
+                name : proposition1,
+                value : `a obtenu ${tanguy} votes`
+                },
+                {
+                name : proposition2,
+                value : `a obtenu ${matthieu} votes`,
+                },
+            ],
+            
+        }
     }
 }
+
 
 
 function alreadyVoted(id){
@@ -91,7 +95,8 @@ module.exports.run = async(client, message, args) => {
             message.reply("désolé tu n'es pas admin");
             return;
         }
-
+        
+        createEmbedResult()
         message.reply(embedResult)
         return;
     }
