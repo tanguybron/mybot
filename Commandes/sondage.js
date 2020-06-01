@@ -137,6 +137,10 @@ module.exports.run = async(client, message, args) => {
             message.reply("désolé tu n'es pas admin");
             return;
         }
+        if(message.guild == null){
+            message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage.")
+            return;
+        }
         message.reply(`\n Tanguy a eu ${tanguy} votes. \n Matthieu a eu ${matthieu} votes.`)
         return;
     }
