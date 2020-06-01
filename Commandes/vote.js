@@ -11,7 +11,7 @@ var nbvotesprop3 = 0;
 var nbvotesprop4 = 0;
 var nbvotesprop5 = 0;
 
-var proposition1 = "tanguy"
+var proposition1 = ""
 var proposition2 = ""
 var proposition3 = ""
 var proposition4 = ""
@@ -36,6 +36,18 @@ function createEmbedResult(){
                 {
                 name : proposition2,
                 value : `a obtenu ${nbvotesprop2} votes`,
+                },
+                {
+                name : proposition3,
+                value : `a obtenu ${nbvotesprop3} votes`,
+                },
+                {
+                name : proposition4,
+                value : `a obtenu ${nbvotesprop4} votes`,
+                },
+                {
+                name : proposition4,
+                value : `a obtenu ${nbvotesprop4} votes`,
                 },
             ],
             
@@ -144,29 +156,6 @@ module.exports.run = async(client, message, args) => {
             message.reply("Vote prit en compte.")
             return;
     }
-/*
-    if(vote === proposition1){
-        if(alreadyVoted(idVotant)){
-            message.reply("Désolé tu as déjà voté.")
-            return;
-        }
-        nbvotesprop1 = nbvotesprop1 + 1;
-        votants.push(idVotant)
-        message.reply("message prit en compte.");
-        botChannel.send("!!sondage")
-        return;
-    }
-
-    if(vote === proposition2){
-        if(alreadyVoted(idVotant)){
-            message.reply("Désolé tu as déjà voté.")
-            return;
-        }
-        nbvotesprop2 = nbvotesprop2+1;
-        votants.push(idVotant)
-        message.reply("message prit en compte."); 
-        return
-    }*/
 
     if(vote === "result"){        
 
@@ -174,11 +163,11 @@ module.exports.run = async(client, message, args) => {
             message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage.")
             return;
         }
-/*
+
         if(!message.member.roles.cache.find(r => r.name === "role rouge")){
             message.reply("tu n'as pas le bon role")
             return;
-        }*/
+        }
         
         if( ( !message.member.hasPermission('ADMINISTRATOR') ) || (!message.member.roles.cache.find(r => r.name === "role rouge")) ){
             message.reply("désolé tu n'as pas le bon rôle pour afficher les résultats.");
