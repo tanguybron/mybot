@@ -57,8 +57,8 @@ module.exports.run = async(client, message, args) => {
 
     idVotant = message.author.id
     readCsvVotants()  
-    args[0] = args[0].toLowerCase()  
-    
+    var vote= args[0]
+        
     if(message.author.bot === idVotant){
         return;
     }    
@@ -69,7 +69,7 @@ module.exports.run = async(client, message, args) => {
         return;
     }
 
-    if(args[0] === proposition1){
+    if(vote === proposition1){
         if(isInCSV(idVotant)){
             message.reply("Désolé tu as déjà voté.")
             return;
@@ -81,7 +81,7 @@ module.exports.run = async(client, message, args) => {
         return;
     }
 
-    if(args[0] === proposition2){
+    if(vote === proposition2){
         if(isInCSV(idVotant)){
             message.reply("Désolé tu as déjà voté.")
             return;
@@ -93,7 +93,7 @@ module.exports.run = async(client, message, args) => {
         return
     }
 
-    if(args[0] === "result"){
+    if(vote === "result"){
 
         if(message.guild == null){
             message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage.")

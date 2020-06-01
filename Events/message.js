@@ -13,7 +13,7 @@ module.exports = async(client, message) => {
     
     if(!message.content.startsWith(prefix)){return;}
 
-    const args = message.content.slice(prefix.length).trim().split(" ")
+    const args = messageLower.slice(prefix.length).trim().split(/ +/g)
     const commande = args.shift();
 
     const cmd = client.commands.get(commande);
