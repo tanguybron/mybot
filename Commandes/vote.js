@@ -11,7 +11,7 @@ var nbvotesprop3 = 0;
 var nbvotesprop4 = 0;
 var nbvotesprop5 = 0;
 
-var proposition1 = ""
+var proposition1 = "tanguy"
 var proposition2 = ""
 var proposition3 = ""
 var proposition4 = ""
