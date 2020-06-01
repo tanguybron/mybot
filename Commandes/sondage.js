@@ -40,12 +40,19 @@ function writeToCSVVotants(){
 }
 
 function isInCSV(id){
-    for(i = 0; i < csvDataVotants.length ; i++){
-        if(csvDataVotants[i] == id){
-            return true;
-        }
-        return false;
+    var lines = csvWriterVotants.split("\n")
+    while( typeof lines[0] !== "undefined" ){
+        var line = lines.shift();
+        console.log(line)
+        if(line == idVotant){return true}
     }
+    /*for(i = 0; i < csvDataVotants.length ; i++){
+        console.log(csvDataVotants[i])
+        if(csvDataVotants[i] === idVotant){
+            return true;
+        }*/
+        return false;
+    //}
 }
 
 
@@ -58,7 +65,7 @@ module.exports.run = async(client, message, args) => {
     idVotant = message.author.id
     readCsvVotants()  
     var vote= args[0]
-        
+
     if(message.author.bot === idVotant){
         return;
     }    
