@@ -191,7 +191,7 @@ module.exports.run = async(client, message, args) => {
         return;
     }
 
-    message.reply("Je n'ai pas compris ton vote. Il doit s'écrire sous la forme de '!!sondage <personne_pour_qui_voter>'")
+    //message.reply("Je n'ai pas compris ton vote. Il doit s'écrire sous la forme de '!!sondage <personne_pour_qui_voter>'")
 }
 
 module.exports.help = {
