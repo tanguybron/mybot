@@ -7,9 +7,18 @@ var blockedVotes = false;
 
 var nbvotesprop1 = 0;
 var nbvotesprop2 = 0;
-const proposition1 = "tanguy"
-const proposition2 = "matthieu"
+var nbvotesprop3 = 0;
+var nbvotesprop4 = 0;
+var nbvotesprop5 = 0;
+
+var proposition1 = ""
+var proposition2 = ""
+var proposition3 = ""
+var proposition4 = ""
+var proposition5 = ""
 var embedResult
+
+
 
 function createEmbedResult(){
     embedResult = {
@@ -63,6 +72,79 @@ module.exports.run = async(client, message, args) => {
         return;
     }
 
+    if(vote === "prop1" || vote === "prop2" || vote === "prop3" || vote === "prop4" || vote === "prop5"){
+        switch(vote){
+            case "prop1" :
+                proposition1 = args[1]
+                message.reply(`${proposition1} chargée en tant que proposition1.`)
+                break;
+            case "prop2" :
+                proposition2 = args[1]
+                message.reply(`${proposition2} chargée en tant que proposition2.`)
+                break;
+            case "prop3" :
+                proposition3 = args[1]
+                message.reply(`${proposition3} chargée en tant que proposition3.`)
+                break;
+            case "prop4" :
+                proposition4 = args[1]
+                message.reply(`${proposition4} chargée en tant que proposition4.`)
+                break;
+            case "prop5" :
+                proposition5 = args[1]
+                message.reply(`${proposition5} chargée en tant que proposition5.`)  
+                break;          
+        }
+    }
+
+    switch(vote){
+        case proposition1 :
+            if(alreadyVoted){
+                message.reply("Désolé, tu as déjà voté.")
+                return;
+            }
+            nbvotesprop1++
+            votants.push(idVotant)
+            message.reply("Vote prit en compte.")
+            return;
+        case proposition2 :
+            if(alreadyVoted){
+                message.reply("Désolé, tu as déjà voté.")
+                return;
+            }
+            nbvotesprop2++
+            votants.push(idVotant)
+            message.reply("Vote prit en compte.")
+            return;
+        case proposition3 :
+            if(alreadyVoted){
+                message.reply("Désolé, tu as déjà voté.")
+                return;
+            }
+            nbvotesprop3++
+            votants.push(idVotant)
+            message.reply("Vote prit en compte.")
+            return;
+        case proposition4 :
+            if(alreadyVoted){
+                message.reply("Désolé, tu as déjà voté.")
+                return;
+            }
+            nbvotesprop4++
+            votants.push(idVotant)
+            message.reply("Vote prit en compte.")
+            return;
+        case proposition5 :
+            if(alreadyVoted){
+                message.reply("Désolé, tu as déjà voté.")
+                return;
+            }
+            nbvotesprop5++
+            votants.push(idVotant)
+            message.reply("Vote prit en compte.")
+            return;
+    }
+/*
     if(vote === proposition1){
         if(alreadyVoted(idVotant)){
             message.reply("Désolé tu as déjà voté.")
@@ -84,7 +166,7 @@ module.exports.run = async(client, message, args) => {
         votants.push(idVotant)
         message.reply("message prit en compte."); 
         return
-    }
+    }*/
 
     if(vote === "result"){        
 
