@@ -85,7 +85,8 @@ module.exports.run = async(client, message, args) => {
     const botChannel = client.channels.cache.get('715556424712716398')
 
     idVotant = message.author.id
-    readCsvVotants()    
+    readCsvVotants()  
+    args[0] = args[0].toLowerCase()  
     
     /*
     function writeToCSV(){
