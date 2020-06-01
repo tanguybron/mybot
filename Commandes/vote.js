@@ -11,11 +11,11 @@ var nbvotesprop3 = 0;
 var nbvotesprop4 = 0;
 var nbvotesprop5 = 0;
 
-var proposition1 = ""
-var proposition2 = ""
-var proposition3 = ""
-var proposition4 = ""
-var proposition5 = ""
+var proposition1 = "1ere proposition"
+var proposition2 = "2eme proposition"
+var proposition3 = "3eme proposition"
+var proposition4 = "4eme proposition"
+var proposition5 = "5eme proposition"
 var embedResult
 
 
