@@ -105,7 +105,7 @@ module.exports.run = async(client, message, args) => {
 
         createEmbedResult()
         message.reply(embedResult)
-        //blockedVotes = true;
+        blockedVotes = true;
         return;
     }
 
