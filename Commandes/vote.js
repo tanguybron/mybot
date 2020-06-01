@@ -99,7 +99,7 @@ module.exports.run = async(client, message, args) => {
 
     switch(vote){
         case proposition1 :
-            if(alreadyVoted){
+            if(!alreadyVoted){
                 message.reply("Désolé, tu as déjà voté.")
                 return;
             }
