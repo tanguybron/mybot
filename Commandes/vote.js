@@ -99,7 +99,7 @@ module.exports.run = async(client, message, args) => {
 
     switch(vote){
         case proposition1 :
-            if(!alreadyVoted){
+            if(alreadyVoted(idVotant)){
                 message.reply("Désolé, tu as déjà voté.")
                 return;
             }
@@ -108,7 +108,7 @@ module.exports.run = async(client, message, args) => {
             message.reply("Vote prit en compte.")
             return;
         case proposition2 :
-            if(alreadyVoted){
+            if(alreadyVoted(idVotant)){
                 message.reply("Désolé, tu as déjà voté.")
                 return;
             }
@@ -117,7 +117,7 @@ module.exports.run = async(client, message, args) => {
             message.reply("Vote prit en compte.")
             return;
         case proposition3 :
-            if(alreadyVoted){
+            if(alreadyVoted(idVotant)){
                 message.reply("Désolé, tu as déjà voté.")
                 return;
             }
@@ -126,7 +126,7 @@ module.exports.run = async(client, message, args) => {
             message.reply("Vote prit en compte.")
             return;
         case proposition4 :
-            if(alreadyVoted){
+            if(alreadyVoted(idVotant)){
                 message.reply("Désolé, tu as déjà voté.")
                 return;
             }
@@ -135,7 +135,7 @@ module.exports.run = async(client, message, args) => {
             message.reply("Vote prit en compte.")
             return;
         case proposition5 :
-            if(alreadyVoted){
+            if(alreadyVoted(idVotant)){
                 message.reply("Désolé, tu as déjà voté.")
                 return;
             }
