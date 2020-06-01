@@ -4,66 +4,25 @@ var tanguy = 0;
 var matthieu = 0;
 var idVotant = "";
 
+var votants = []
+
 const proposition1 = "tanguy"
 const proposition2 = "matthieu"
 
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const parse = require('csv-parse');
-const fs = require('fs')
-const csvDataVotants = []
-const csvDataVotes = []
 
-function readCsvVotants(){
-    fs.createReadStream('votants.csv')
-        .pipe(
-            parse({
-                delimiter : ','
-            })
-        )
-        .on('data', function (dataRow){
-            csvDataVotants.push(dataRow)   
-        })
-}
-
-const csvWriterVotants = createCsvWriter({
-    path: 'votants.csv',
-    header: [
-        {id: 'id', title: 'ID Votant'},
-    ]
-});
-
-function writeToCSVVotants(){
-    csvWriterVotants.fileWriter.write(idVotant + "\n")
-    .then(() => {
-        console.log('...Done');    
-    });
-}
-
-function isInCSV(id){
-    var lines = csvWriterVotants.split("\n")
-    while( typeof lines[0] !== "undefined" ){
-        var line = lines.shift();
-        console.log(line)
-        if(line == idVotant){return true}
+function alreadyVoted(id){
+    if(votants.includes(id)){
+        return true;
     }
-    /*for(i = 0; i < csvDataVotants.length ; i++){
-        console.log(csvDataVotants[i])
-        if(csvDataVotants[i] === idVotant){
-            return true;
-        }*/
-        return false;
-    //}
+    return false;
 }
-
-
-readCsvVotants()
 
 module.exports.run = async(client, message, args) => {
 
     const botChannel = client.channels.cache.get('715556424712716398')
 
     idVotant = message.author.id
-    readCsvVotants()  
+
     var vote= args[0]
 
     if(message.author.bot === idVotant){
@@ -77,26 +36,26 @@ module.exports.run = async(client, message, args) => {
     }
 
     if(vote === proposition1){
-        if(isInCSV(idVotant)){
+        if(alreadyVoted(idVotant)){
             message.reply("Désolé tu as déjà voté.")
             return;
         }
         tanguy = tanguy + 1;
-        writeToCSVVotants();
+        votants.push(idVotant)
         message.reply("message prit en compte.");
         botChannel.send("!!sondage")
         return;
     }
 
     if(vote === proposition2){
-        if(isInCSV(idVotant)){
+        if(alreadyVoted(idVotant)){
             message.reply("Désolé tu as déjà voté.")
             return;
         }
         matthieu = matthieu+1;
-        writeToCSVVotants();
+        votants.push(idVotant)
         message.reply("message prit en compte."); 
-        botChannel.send("!!sondage")
+        //botChannel.send("!!sondage")
         return
     }
 
