@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = async(client) => {
-    client.user.setActivity("Tanguy's order", {type : "LISTENING"}).catch(console.error)
+    client.user.setActivity("Minecraft", {type : "PLAYING"}).catch(console.error)
     
     const spamChannel = client.channels.cache.get('716326108198600806')
      
