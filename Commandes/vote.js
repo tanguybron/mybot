@@ -1,10 +1,12 @@
 const Discord = require("discord.js")
 
-var tanguy = 0;
-var matthieu = 0;
+
 var idVotant = "";
 var votants = []
+var blockedVotes = false;
 
+var nbvotesprop1 = 0;
+var nbvotesprop2 = 0;
 const proposition1 = "tanguy"
 const proposition2 = "matthieu"
 var embedResult
@@ -20,11 +22,11 @@ function createEmbedResult(){
             fields : [
                 {
                 name : proposition1,
-                value : `a obtenu ${tanguy} votes`
+                value : `a obtenu ${nbvotesprop1} votes`
                 },
                 {
                 name : proposition2,
-                value : `a obtenu ${matthieu} votes`,
+                value : `a obtenu ${nbvotesprop2} votes`,
                 },
             ],
             
@@ -47,6 +49,10 @@ module.exports.run = async(client, message, args) => {
 
     var vote= args[0]
 
+    if(blockedVotes){
+        message.reply(`Les votes sont clos. Tu ne peux plus voter.`)
+    }
+
     if(message.author.bot === idVotant){
         return;
     }    
@@ -62,7 +68,7 @@ module.exports.run = async(client, message, args) => {
             message.reply("Désolé tu as déjà voté.")
             return;
         }
-        tanguy = tanguy + 1;
+        nbvotesprop1 = nbvotesprop1 + 1;
         votants.push(idVotant)
         message.reply("message prit en compte.");
         botChannel.send("!!sondage")
@@ -74,7 +80,7 @@ module.exports.run = async(client, message, args) => {
             message.reply("Désolé tu as déjà voté.")
             return;
         }
-        matthieu = matthieu+1;
+        nbvotesprop2 = nbvotesprop2+1;
         votants.push(idVotant)
         message.reply("message prit en compte."); 
         return
@@ -94,6 +100,7 @@ module.exports.run = async(client, message, args) => {
 
         createEmbedResult()
         message.reply(embedResult)
+        blockedVotes = true;
         return;
     }
 
@@ -101,5 +108,5 @@ module.exports.run = async(client, message, args) => {
 }
 
 module.exports.help = {
-    name : "sondage"
+    name : "vote"
 }
