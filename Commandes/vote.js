@@ -213,6 +213,15 @@ module.exports.run = async(client, message, args) => {
             return a - b;
         });
 
+        switch(votes[0]){
+            case nbvotesprop1 :
+                messageResult1 = messageResult1 + " :medal: "
+                break;
+            case nbvotesprop2 :
+                messageResult2 = messageResult2 + " :medal: "
+                break;
+        }
+
         console.log(votes)
         message.reply(` https://www.sbte.edu.pk/wp-content/uploads/2018/05/Result-510x310.png \n \n \n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
         //message.reply(embedResult)
