@@ -9,7 +9,7 @@ module.exports = async(client) => {
         var hours = now.getHours()
         var minutes = now.getMinutes();
         //vérifie si c'est l'heure
-        if(hours === 18 && minutes === 29){
+        if(hours === 26 && minutes === 29){
             spamChannel.send(`Il est ${hours}h${minutes}`)
         }
     }, 60000)//attend 60000 ms = 1min et vérifie à chaque minute si c'est l'heure d'envoyer le message ou non.
