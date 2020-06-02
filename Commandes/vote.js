@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 
 var idVotant = "";
 var votants = []
-var blockedVotes = false;
+var blockedVotes = true;
 
 var nbvotesprop1 = 0;
 var nbvotesprop2 = 0;
@@ -68,20 +68,19 @@ module.exports.run = async(client, message, args) => {
 
     idVotant = message.author.id
 
-    var vote= args[0]
-
-    if(blockedVotes){
-        message.reply(`Les votes sont clos. Tu ne peux plus voter.`)
-    }
+    var vote= args[0]    
 
     if(message.author.bot === idVotant){
         return;
     }    
 
-
     if(!args[0]){
         message.reply("Pour qui votes-tu ? il faut le préciser !");
         return;
+    }
+
+    if(args[0] === "start"){
+        blockedVotes = false;
     }
 
     if(vote === "prop1" || vote === "prop2" || vote === "prop3" || vote === "prop4" || vote === "prop5"){
@@ -107,6 +106,10 @@ module.exports.run = async(client, message, args) => {
                 message.reply(`${proposition5} chargée en tant que proposition5.`)  
                 break;          
         } 
+    }
+
+    if(blockedVotes){
+        message.reply(`Les votes sont bloqués. Tu ne peux pas voter.`)
     }
 
     switch(vote){
@@ -187,6 +190,18 @@ module.exports.run = async(client, message, args) => {
         if(proposition4 == "4eme proposition"){messageResult4 = ""}
         if(proposition5 == "5eme proposition"){messageResult5 = ""}
 
+        var votes = []
+        votes.push(nbvotesprop1)
+        votes.push(nbvotesprop2)
+        votes.push(nbvotesprop3)
+        votes.push(nbvotesprop4)
+        votes.push(nbvotesprop5)
+                
+        votes.sort(function(a, b) {
+            return a - b;
+        });
+
+        console.log(votes)
         message.reply(`\n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
         //message.reply(embedResult)
         blockedVotes = true;
