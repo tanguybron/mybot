@@ -121,6 +121,7 @@ module.exports.run = async(client, message, args) => {
 
     if(blockedVotes){
         message.reply(`Les votes sont bloqués. Tu ne peux pas voter.`)
+        return;
     }
 
     switch(vote){
