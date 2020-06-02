@@ -181,13 +181,13 @@ module.exports.run = async(client, message, args) => {
         var messageResult4 = `${proposition4} a obtenu ${nbvotesprop4} votes.`
         var messageResult5 = `${proposition5} a obtenu ${nbvotesprop5} votes.`
 
-        if(prop1 == "proposition 1"){messageResult1 = ""}
-        if(prop1 == "proposition 2"){messageResult2 = ""}
-        if(prop1 == "proposition 3"){messageResult3 = ""}
-        if(prop1 == "proposition 4"){messageResult4 = ""}
-        if(prop1 == "proposition 5"){messageResult5 = ""}
+        if(proposition1 == "1ere proposition"){messageResult1 = ""}
+        if(proposition2 == "2eme proposition"){messageResult2 = ""}
+        if(proposition3 == "3eme proposition"){messageResult3 = ""}
+        if(proposition4 == "4eme proposition"){messageResult4 = ""}
+        if(proposition5 == "5eme proposition"){messageResult5 = ""}
 
-        message.reply(`${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
+        message.reply(`\n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
         //message.reply(embedResult)
         blockedVotes = true;
         return;
