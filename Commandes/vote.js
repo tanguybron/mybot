@@ -163,11 +163,11 @@ module.exports.run = async(client, message, args) => {
             message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage.")
             return;
         }
-
+/*
         if(!message.member.roles.cache.find(r => r.name === "role rouge")){
             message.reply("tu n'as pas le bon role")
             return;
-        }
+        }*/
         
         if( ( !message.member.hasPermission('ADMINISTRATOR') ) || (!message.member.roles.cache.find(r => r.name === "role rouge")) ){
             message.reply("désolé tu n'as pas le bon rôle pour afficher les résultats.");
