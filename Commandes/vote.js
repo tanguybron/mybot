@@ -169,7 +169,7 @@ module.exports.run = async(client, message, args) => {
             return;
         }*/
         
-        if( ( !message.member.hasPermission('ADMINISTRATOR') ) || (!message.member.roles.cache.find(r => r.name === "role rouge")) ){
+        if( !message.member.hasPermission('ADMINISTRATOR') ){ //|| (!message.member.roles.cache.find(r => r.name === "role rouge")) ){
             message.reply("désolé tu n'as pas le bon rôle pour afficher les résultats.");
             return;
         }
