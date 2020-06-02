@@ -210,12 +210,12 @@ module.exports.run = async(client, message, args) => {
         votes.push(nbvotesprop5)
                 
         votes.sort(function(a, b) {
-            return a - b;
+            return b - a;
         });
 
         console.log(votes)
 
-        switch(votes[votes.lenght - 1]){
+        switch(votes[0]){
             case nbvotesprop1 :
                 messageResult1 = messageResult1 + " :medal: "
                 break;
