@@ -46,8 +46,8 @@ function createEmbedResult(){
                 value : `a obtenu ${nbvotesprop4} votes`,
                 },
                 {
-                name : proposition4,
-                value : `a obtenu ${nbvotesprop4} votes`,
+                name : proposition5,
+                value : `a obtenu ${nbvotesprop5} votes`,
                 },
             ],
             
@@ -175,7 +175,20 @@ module.exports.run = async(client, message, args) => {
         }
 
         createEmbedResult()
-        message.reply(embedResult)
+        var messageResult1 = `${proposition1} a obtenu ${nbvotesprop1} votes.`
+        var messageResult2 = `${proposition2} a obtenu ${nbvotesprop2} votes.`
+        var messageResult3 = `${proposition3} a obtenu ${nbvotesprop3} votes.`
+        var messageResult4 = `${proposition4} a obtenu ${nbvotesprop4} votes.`
+        var messageResult5 = `${proposition5} a obtenu ${nbvotesprop5} votes.`
+
+        if(prop1 == "proposition 1"){messageResult1 = ""}
+        if(prop1 == "proposition 2"){messageResult2 = ""}
+        if(prop1 == "proposition 3"){messageResult3 = ""}
+        if(prop1 == "proposition 4"){messageResult4 = ""}
+        if(prop1 == "proposition 5"){messageResult5 = ""}
+
+        message.reply(`${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
+        //message.reply(embedResult)
         blockedVotes = true;
         return;
     }
