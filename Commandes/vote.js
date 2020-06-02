@@ -62,6 +62,14 @@ function alreadyVoted(id){
     return false;
 }
 
+function supprEmpty(){
+    if(proposition1 == "1ere proposition"){proposition1 = ""}
+    if(proposition2 == "2eme proposition"){proposition2 = ""}
+    if(proposition3 == "3eme proposition"){proposition3 = ""}
+    if(proposition4 == "4eme proposition"){proposition4 = ""}
+    if(proposition5 == "5eme proposition"){proposition5 = ""}
+}
+
 module.exports.run = async(client, message, args) => {
 
     const botChannel = client.channels.cache.get('715556424712716398')
@@ -81,6 +89,8 @@ module.exports.run = async(client, message, args) => {
 
     if(args[0] === "start"){
         blockedVotes = false;
+        supprEmpty()
+        message.reply(`les votes sont ouverts ! Il est possible de voter pour : \n ${proposition1} \n ${proposition2} \n ${proposition3} \n ${proposition4} \n ${proposition5} `)
     }
 
     if(vote === "prop1" || vote === "prop2" || vote === "prop3" || vote === "prop4" || vote === "prop5"){
