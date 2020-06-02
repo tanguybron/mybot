@@ -91,6 +91,7 @@ module.exports.run = async(client, message, args) => {
         blockedVotes = false;
         supprEmpty()
         message.reply(`les votes sont ouverts ! Il est possible de voter pour : \n ${proposition1} \n ${proposition2} \n ${proposition3} \n ${proposition4} \n ${proposition5} `)
+        return;
     }
 
     if(vote === "prop1" || vote === "prop2" || vote === "prop3" || vote === "prop4" || vote === "prop5"){
@@ -98,23 +99,23 @@ module.exports.run = async(client, message, args) => {
             case "prop1" :
                 proposition1 = args[1]
                 message.reply(`${proposition1} chargée en tant que proposition1.`)
-                break;
+                return;
             case "prop2" :
                 proposition2 = args[1]
                 message.reply(`${proposition2} chargée en tant que proposition2.`)
-                break;
+                return;
             case "prop3" :
                 proposition3 = args[1]
                 message.reply(`${proposition3} chargée en tant que proposition3.`)
-                break;
+                return;
             case "prop4" :
                 proposition4 = args[1]
                 message.reply(`${proposition4} chargée en tant que proposition4.`)
-                break;
+                return;
             case "prop5" :
                 proposition5 = args[1]
                 message.reply(`${proposition5} chargée en tant que proposition5.`)  
-                break;          
+                return;         
         } 
     }
 
