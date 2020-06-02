@@ -214,7 +214,7 @@ module.exports.run = async(client, message, args) => {
         });
 
         console.log(votes)
-        message.reply(`\n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
+        message.reply(`https://www.sbte.edu.pk/wp-content/uploads/2018/05/Result-510x310.png \n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
         //message.reply(embedResult)
         blockedVotes = true;
         return;
