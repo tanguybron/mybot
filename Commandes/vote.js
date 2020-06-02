@@ -196,11 +196,11 @@ module.exports.run = async(client, message, args) => {
         var messageResult4 = `${proposition4} a obtenu ${nbvotesprop4} votes.`
         var messageResult5 = `${proposition5} a obtenu ${nbvotesprop5} votes.`
 
-        if(proposition1 == "1ere proposition"){messageResult1 = ""}
-        if(proposition2 == "2eme proposition"){messageResult2 = ""}
-        if(proposition3 == "3eme proposition"){messageResult3 = ""}
-        if(proposition4 == "4eme proposition"){messageResult4 = ""}
-        if(proposition5 == "5eme proposition"){messageResult5 = ""}
+        if(proposition1 == ""){messageResult1 = ""}
+        if(proposition2 == ""){messageResult2 = ""}
+        if(proposition3 == ""){messageResult3 = ""}
+        if(proposition4 == ""){messageResult4 = ""}
+        if(proposition5 == ""){messageResult5 = ""}
 
         var votes = []
         votes.push(nbvotesprop1)
