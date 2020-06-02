@@ -217,10 +217,67 @@ module.exports.run = async(client, message, args) => {
 
         switch(votes[0]){
             case nbvotesprop1 :
-                messageResult1 = messageResult1 + " :medal: "
+                messageResult1 = messageResult1 + " :first_place:  "
                 break;
+
             case nbvotesprop2 :
-                messageResult2 = messageResult2 + " :medal: "
+                messageResult2 = messageResult2 + " :first_place:  "
+                break;
+            
+            case nbvotesprop3 :
+                messageResult3 = messageResult3 + " :first_place:  "
+                break;
+            
+            case nbvotesprop4 :
+                messageResult4 = messageResult4 + " :first_place:  "
+                break;
+                
+            case nbvotesprop5 :
+                messageResult5 = messageResult5 + " :first_place:  "
+                break;
+        }
+
+        switch(votes[1]){
+            case nbvotesprop1 :
+                messageResult1 = messageResult1 + " :second_place:  "
+                break;
+
+            case nbvotesprop2 :
+                messageResult2 = messageResult2 + " :second_place:  "
+                break;
+            
+            case nbvotesprop3 :
+                messageResult3 = messageResult3 + " :second_place:  "
+                break;
+            
+            case nbvotesprop4 :
+                messageResult4 = messageResult4 + " :second_place:  "
+                break;
+                
+            case nbvotesprop5 :
+                messageResult5 = messageResult5 + " :second_place:  "
+                break;
+        }
+
+        switch(votes[2]){
+            case nbvotesprop1 :
+                messageResult1 = messageResult1 + " :third_place:  "
+                break;
+
+            case nbvotesprop2 :
+                messageResult2 = messageResult2 + " :third_place:  "
+                break;
+            
+            case nbvotesprop3 :
+                messageResult3 = messageResult3 + " :third_place:  "
+                break;
+            
+            case nbvotesprop4 :
+                messageResult4 = messageResult4 + " :third_place:  "
+                break;
+                
+            case nbvotesprop5 :
+                messageResult5 = messageResult5 + " :third_place: "
                 break;
         }
 
