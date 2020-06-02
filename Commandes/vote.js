@@ -83,7 +83,7 @@ module.exports.run = async(client, message, args) => {
     }    
 
     if(!args[0]){
-        message.reply("Pour qui votes-tu ? il faut le préciser !");
+        message.reply("Pour qui votes-tu ? il faut le préciser ! 🧐");
         return;
     }
 
@@ -98,84 +98,84 @@ module.exports.run = async(client, message, args) => {
         switch(vote){
             case "prop1" :
                 proposition1 = args[1]
-                message.reply(`${proposition1} chargée en tant que proposition1.`)
+                message.reply(`${proposition1} chargée en tant que proposition1. :joy:`)
                 return;
             case "prop2" :
                 proposition2 = args[1]
-                message.reply(`${proposition2} chargée en tant que proposition2.`)
+                message.reply(`${proposition2} chargée en tant que proposition2.✅`)
                 return;
             case "prop3" :
                 proposition3 = args[1]
-                message.reply(`${proposition3} chargée en tant que proposition3.`)
+                message.reply(`${proposition3} chargée en tant que proposition3.✅`)
                 return;
             case "prop4" :
                 proposition4 = args[1]
-                message.reply(`${proposition4} chargée en tant que proposition4.`)
+                message.reply(`${proposition4} chargée en tant que proposition4.✅`)
                 return;
             case "prop5" :
                 proposition5 = args[1]
-                message.reply(`${proposition5} chargée en tant que proposition5.`)  
+                message.reply(`${proposition5} chargée en tant que proposition5.✅`)  
                 return;         
         } 
     }
 
     if(blockedVotes){
-        message.reply(`Les votes sont bloqués. Tu ne peux pas voter.`)
+        message.reply(`Les votes sont bloqués. Tu ne peux pas voter. 😟`)
         return;
     }
 
     switch(vote){
         case proposition1 :
             if(alreadyVoted(idVotant)){
-                message.reply("Désolé, tu as déjà voté.")
+                message.reply("Désolé, tu as déjà voté.😟")
                 return;
             }
             nbvotesprop1++
             votants.push(idVotant)
-            message.reply("Vote prit en compte.")
+            message.reply("Vote prit en compte.✅")
             return;
         case proposition2 :
             if(alreadyVoted(idVotant)){
-                message.reply("Désolé, tu as déjà voté.")
+                message.reply("Désolé, tu as déjà voté. 😟")
                 return;
             }
             nbvotesprop2++
             votants.push(idVotant)
-            message.reply("Vote prit en compte.")
+            message.reply("Vote prit en compte.✅")
             return;
         case proposition3 :
             if(alreadyVoted(idVotant)){
-                message.reply("Désolé, tu as déjà voté.")
+                message.reply("Désolé, tu as déjà voté. 😟")
                 return;
             }
             nbvotesprop3++
             votants.push(idVotant)
-            message.reply("Vote prit en compte.")
+            message.reply("Vote prit en compte.✅")
             return;
         case proposition4 :
             if(alreadyVoted(idVotant)){
-                message.reply("Désolé, tu as déjà voté.")
+                message.reply("Désolé, tu as déjà voté. 😟")
                 return;
             }
             nbvotesprop4++
             votants.push(idVotant)
-            message.reply("Vote prit en compte.")
+            message.reply("Vote prit en compte.✅")
             return;
         case proposition5 :
             if(alreadyVoted(idVotant)){
-                message.reply("Désolé, tu as déjà voté.")
+                message.reply("Désolé, tu as déjà voté. 😟")
                 return;
             }
             nbvotesprop5++
             votants.push(idVotant)
-            message.reply("Vote prit en compte.")
+            message.reply("Vote prit en compte.✅")
             return;
     }
 
     if(vote === "result"){        
 
         if(message.guild == null){
-            message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage.")
+            message.reply("je ne peux pas donner les résultats en privé, désolé. Il faut que tu ailles sur le serveur du sondage. 😟")
             return;
         }
 /*
@@ -185,7 +185,7 @@ module.exports.run = async(client, message, args) => {
         }*/
         
         if( !message.member.hasPermission('ADMINISTRATOR') ){ //|| (!message.member.roles.cache.find(r => r.name === "role rouge")) ){
-            message.reply("désolé tu n'as pas le bon rôle pour afficher les résultats.");
+            message.reply("désolé tu n'as pas le bon rôle pour afficher les résultats. 😟");
             return;
         }
 
