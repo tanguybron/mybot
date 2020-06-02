@@ -106,7 +106,7 @@ module.exports.run = async(client, message, args) => {
                 proposition5 = args[1]
                 message.reply(`${proposition5} chargée en tant que proposition5.`)  
                 break;          
-        }
+        } 
     }
 
     switch(vote){
