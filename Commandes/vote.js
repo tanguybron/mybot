@@ -190,11 +190,11 @@ module.exports.run = async(client, message, args) => {
         }
 
         createEmbedResult()
-        var messageResult1 = `${proposition1} a obtenu ${nbvotesprop1} votes.`
-        var messageResult2 = `${proposition2} a obtenu ${nbvotesprop2} votes.`
-        var messageResult3 = `${proposition3} a obtenu ${nbvotesprop3} votes.`
-        var messageResult4 = `${proposition4} a obtenu ${nbvotesprop4} votes.`
-        var messageResult5 = `${proposition5} a obtenu ${nbvotesprop5} votes.`
+        var messageResult1 = `**${proposition1} a obtenu ${nbvotesprop1} votes.**`
+        var messageResult2 = `**${proposition2} a obtenu ${nbvotesprop2} votes.**`
+        var messageResult3 = `**${proposition3} a obtenu ${nbvotesprop3} votes.**`
+        var messageResult4 = `**${proposition4} a obtenu ${nbvotesprop4} votes.**`
+        var messageResult5 = `**${proposition5} a obtenu ${nbvotesprop5} votes.**`
 
         if(proposition1 == ""){messageResult1 = ""}
         if(proposition2 == ""){messageResult2 = ""}
@@ -214,7 +214,7 @@ module.exports.run = async(client, message, args) => {
         });
 
         console.log(votes)
-        message.reply(`https://www.sbte.edu.pk/wp-content/uploads/2018/05/Result-510x310.png \n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
+        message.reply(` https://www.sbte.edu.pk/wp-content/uploads/2018/05/Result-510x310.png \n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
         //message.reply(embedResult)
         blockedVotes = true;
         return;
