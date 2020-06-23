@@ -236,7 +236,7 @@ module.exports.run = async(client, message, args) => {
                 messageResult5 = messageResult5 + " :first_place:  "
                 break;
         }
-
+/*
         switch(votes[1]){
             case nbvotesprop1 :
                 messageResult1 = messageResult1 + " :second_place:  "
@@ -279,7 +279,7 @@ module.exports.run = async(client, message, args) => {
             case nbvotesprop5 :
                 messageResult5 = messageResult5 + " :third_place: "
                 break;
-        }
+        }*/
 
         console.log(votes)
         message.reply(` https://www.sbte.edu.pk/wp-content/uploads/2018/05/Result-510x310.png \n \n \n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
