@@ -90,7 +90,7 @@ module.exports.run = async(client, message, args) => {
     if(args[0] === "start"){
         blockedVotes = false;
         supprEmpty()
-        message.reply(`les votes sont ouverts ! Il est possible de voter pour : \n ${proposition1} \n ${proposition2} \n ${proposition3} \n ${proposition4} \n ${proposition5} `)
+        message.reply(`Les votes sont ouverts ! Il est possible de voter pour : \n ${proposition1} \n ${proposition2} \n ${proposition3} \n ${proposition4} \n ${proposition5} `)
         return;
     }
 
