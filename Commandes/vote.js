@@ -75,7 +75,7 @@ module.exports.run = async(client, message, args) => {
     const botChannel = client.channels.cache.get('715556424712716398')
 
     idVotant = message.author.id
-
+ 
     var vote= args[0]    
 
     if(message.author.bot === idVotant){
