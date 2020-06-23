@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 
 var idVotant = "";
 var votants = []
-var blockedVotes = true;
+var blockedVotes = false;
 
 var nbvotesprop1 = 0;
 var nbvotesprop2 = 0;
