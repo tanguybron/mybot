@@ -213,7 +213,7 @@ module.exports.run = async(client, message, args) => {
             return b - a;
         });
 
-        console.log(votes)
+        console.log(votes) 
 
         switch(votes[0]){
             case nbvotesprop1 :
