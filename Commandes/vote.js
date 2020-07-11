@@ -148,7 +148,7 @@ module.exports.run = async(client, message, args) => {
                 message.reply("Désolé, tu as déjà voté. :worried: ")
                 return;
             }
-            nbvotesprop3++
+            nbvotesprop3++ 
             votants.push(idVotant)
             message.reply("Vote prit en compte. :white_check_mark:")
             return;
