@@ -89,11 +89,6 @@ module.exports.run = async(client, message, args) => {
 
     if(args[0] === "start"){
         blockedVotes = false;
-        nbvotesprop1 = 0;
-        nbvotesprop2 = 0;
-        nbvotesprop3 = 0;
-        nbvotesprop4 = 0;
-        nbvotesprop5 = 0;
         supprEmpty()
         message.reply(`Les votes sont ouverts ! Il est possible de voter pour : \n ${proposition1} \n ${proposition2} \n ${proposition3} \n ${proposition4} \n ${proposition5} `)
         return;
@@ -290,6 +285,18 @@ module.exports.run = async(client, message, args) => {
         message.reply(` https://www.sbte.edu.pk/wp-content/uploads/2018/05/Result-510x310.png \n \n \n ${messageResult1} \n ${messageResult2} \n ${messageResult3} \n ${messageResult4} \n ${messageResult5}`)
         //message.reply(embedResult)
         blockedVotes = true;
+        
+        nbvotesprop1 = 0;
+        nbvotesprop2 = 0;
+        nbvotesprop3 = 0;
+        nbvotesprop4 = 0;
+        nbvotesprop5 = 0;
+        
+        proposition1 = "1ere proposition"
+        proposition2 = "2eme proposition"
+        proposition3 = "3eme proposition"
+        proposition4 = "4eme proposition"
+        proposition5 = "5eme proposition"
         return;
     }
 
