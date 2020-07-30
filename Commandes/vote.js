@@ -297,6 +297,8 @@ module.exports.run = async(client, message, args) => {
         proposition3 = "3eme proposition"
         proposition4 = "4eme proposition"
         proposition5 = "5eme proposition"
+
+        votants = []
         return;
     }
 
