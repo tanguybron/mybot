@@ -89,6 +89,11 @@ module.exports.run = async(client, message, args) => {
 
     if(args[0] === "start"){
         blockedVotes = false;
+        nbvotesprop1 = 0;
+        nbvotesprop2 = 0;
+        nbvotesprop3 = 0;
+        nbvotesprop4 = 0;
+        nbvotesprop5 = 0;
         supprEmpty()
         message.reply(`Les votes sont ouverts ! Il est possible de voter pour : \n ${proposition1} \n ${proposition2} \n ${proposition3} \n ${proposition4} \n ${proposition5} `)
         return;
@@ -148,7 +153,7 @@ module.exports.run = async(client, message, args) => {
                 message.reply("Désolé, tu as déjà voté. :worried: ")
                 return;
             }
-            nbvotesprop3++ 
+            nbvotesprop3++
             votants.push(idVotant)
             message.reply("Vote prit en compte. :white_check_mark:")
             return;
